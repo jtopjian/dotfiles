@@ -77,3 +77,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Syntax
 au BufRead,BufNewFile *.pp              set filetype=puppet
+
+" Mouse
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+set clipboard=unnamed
