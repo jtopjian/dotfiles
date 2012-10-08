@@ -3,3 +3,10 @@
 	email = joe@topjian.net
 [color]
 	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+[merge]
+    tool = fugitive
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"

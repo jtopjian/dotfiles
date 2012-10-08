@@ -70,7 +70,7 @@ if executable("par")
     set formatprg=par\ -w80rq
 endif
 
-" NERDTree
+" vim bundles
 call pathogen#infect()
 nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

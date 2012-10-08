@@ -1,0 +1,5 @@
+source /etc/bashrc
+export PATH=/usr/local/share/python:/usr/local/bin:/Developer/usr/bin:$PATH
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export RUBYLIB=$RUBYLIB:/usr/lib/ruby:/usr/lib/ruby/1.8:/usr/lib/ruby/site_ruby/1.8

@@ -4,7 +4,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files=`cd $dir; ls -d .[a-z]*`    # list of files/folders to symlink in homedir
+files=`cd $dir; ls -d .[a-z]* | grep -v .git$`    # list of files/folders to symlink in homedir
 
 ##########
 
