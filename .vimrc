@@ -16,8 +16,8 @@ syntax on
 " autoindent
 set autoindent|set cindent
 
-" 4 space tabs
-set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
+" 2 space tabs
+set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 
 " show matching brackets
 set showmatch
