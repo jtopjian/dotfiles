@@ -83,3 +83,11 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 set clipboard=unnamed
+
+" Sent to tmux
+function! Send_to_Tmux(text)
+  call system("tmux set-buffer '" . substitute(a:text, "'", "'\\\\''", 'g') . "'" )
+endfunction
+vmap <C-c><C-c> "ry :call Send_to_Tmux(@r)<CR>
+nmap <C-c><C-c> vip<C-c><C-c>
+nmap <C-c>v :call <SID>Tmux_Vars()<CR>
