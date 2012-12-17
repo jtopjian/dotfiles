@@ -23,7 +23,7 @@ set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 set showmatch
 
 " show line numbers
-set number
+set nonumber
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " make tab in v mode ident code
@@ -46,7 +46,7 @@ set foldmarker={,}
 set foldmethod=marker
 set foldlevel=100
 set listchars=tab:>-,trail:-
-set statusline=%F%m%r%h%w\ %y\ [%l/%L,%04v](%p%%)
+set statusline=%F%m%r%h%w\ %y\ %=[%l/%L,%04v](%p%%)
 set laststatus=2
 
 " Buffer navigation
@@ -79,15 +79,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 au BufRead,BufNewFile *.pp              set filetype=puppet
 
 " Mouse
-set mouse=a
+"set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 set clipboard=unnamed
 
-" Sent to tmux
-function! Send_to_Tmux(text)
-  call system("tmux set-buffer '" . substitute(a:text, "'", "'\\\\''", 'g') . "'" )
-endfunction
-vmap <C-c><C-c> "ry :call Send_to_Tmux(@r)<CR>
-nmap <C-c><C-c> vip<C-c><C-c>
-nmap <C-c>v :call <SID>Tmux_Vars()<CR>
+
+" Shared 'buffer'
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/vimbuffer<CR>
+" paste from buffer
+nmap <C-p> :r ~/.vimbuffer<CR>
