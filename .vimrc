@@ -8,10 +8,11 @@ set incsearch
 set hidden
 
 " syntax highlighting
-set t_Co=256
-set cursorline
-color ir_black
+" set t_Co=256
+call pathogen#infect()
+" set cursorline
 syntax on
+colorscheme desert
 
 " autoindent
 set autoindent|set cindent
@@ -71,7 +72,6 @@ if executable("par")
 endif
 
 " vim bundles
-call pathogen#infect()
 nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
