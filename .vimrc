@@ -90,3 +90,13 @@ vmap <C-c> :w! ~/.vimbuffer<CR>
 nmap <C-c> :.w! ~/vimbuffer<CR>
 " paste from buffer
 nmap <C-p> :r ~/.vimbuffer<CR>
+
+" Trailing Whitespace
+match ErrorMsg '\s\+$'
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
