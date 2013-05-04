@@ -92,7 +92,10 @@ nmap <C-c> :.w! ~/vimbuffer<CR>
 nmap <C-p> :r ~/.vimbuffer<CR>
 
 " Trailing Whitespace
-match ErrorMsg '\s\+$'
+highlight default link EndOfLineSpace ErrorMsg
+match EndOfLineSpace / \+$/
+autocmd InsertEnter * hi link EndOfLineSpace Normal
+autocmd InsertLeave * hi link EndOfLineSpace ErrorMsg
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
