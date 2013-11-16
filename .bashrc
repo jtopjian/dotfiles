@@ -10,11 +10,9 @@ else
     PS1="[ \u@\h \w ] $ "
 fi
 
-# Start tmux if it's installed
-#if which tmux 2>&1 >/dev/null; then
-#    #if not inside a tmux session, and if no session is started, start a new session
-#    test -z "$TMUX" && (tmux attach || tmux new-session)
-#fi
-function tmuxs() {
-  ssh $1 -t "if which tmux 2>&1 >/dev/null; then (tmux attach || tmux new-session); fi"
-}
+# Ignore duplicate history entries
+HISTCONTROL=ignoreboth
+
+# Hiera YAML shortcuts
+function yamlc() { ruby -e "require 'yaml'; YAML.parse(File.open('$1'))"; }
+function hierapp() { ruby -e "require 'pp'; pp(eval(ARGF.read))"; }
