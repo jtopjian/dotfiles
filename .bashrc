@@ -10,5 +10,5 @@ else
     PS1="[ \u@\h \w ] $ "
 fi
 
-# Ignore duplicates in history
+# Ignore duplicate history entries
 HISTCONTROL=ignoreboth
