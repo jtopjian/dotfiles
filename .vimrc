@@ -71,10 +71,6 @@ if executable("par")
     set formatprg=par\ -w80rq
 endif
 
-" vim bundles
-nnoremap <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " Syntax
 au BufRead,BufNewFile *.pp              set filetype=puppet
 
@@ -103,3 +99,5 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+autocmd BufRead,BufNewFile *.md setlocal spell
