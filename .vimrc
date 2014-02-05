@@ -72,7 +72,10 @@ if executable("par")
 endif
 
 " Syntax
-au BufRead,BufNewFile *.pp              set filetype=puppet
+au BufRead,BufNewFile *.pp   set filetype=puppet
+au BufRead,BufNewFile *.cap  set filetype=ruby
+au BufRead,BufNewFile *.task set filetype=ruby
+au BufRead,BufNewFile *.rake set filetype=ruby
 
 " Mouse
 "set mouse=a
