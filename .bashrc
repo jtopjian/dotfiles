@@ -5,10 +5,13 @@ fi
 
 # Set a basic prompt
 if [ $UID -eq 0 ]; then
-    PS1="[ \u@\h \w ] # "
+    PS1="\n\u@\h:\!:\#:\w\n# "
 else
-    PS1="[ \u@\h \w ] $ "
+    PS1="\n\u@\h:\!:\#:\w\n$ "
 fi
+
+# Aliases
+alias lls="lxc-ls --fancy"
 
 # Ignore duplicate history entries
 HISTCONTROL=ignoreboth
