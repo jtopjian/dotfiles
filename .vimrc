@@ -1,3 +1,5 @@
+colorscheme gotham256
+
 " use visual bell instead of beeping
 set vb
 
@@ -8,11 +10,10 @@ set incsearch
 set hidden
 
 " syntax highlighting
-" set t_Co=256
+set t_Co=256
 call pathogen#infect()
 " set cursorline
 syntax on
-colorscheme desert
 
 " autoindent
 set autoindent|set cindent
@@ -67,9 +68,6 @@ map <leader>et :tabe %%
 " Set wrapping
 set wrap
 set linebreak
-if executable("par")
-    set formatprg=par\ -w80rq
-endif
 
 " Syntax
 au BufRead,BufNewFile *.pp   set filetype=puppet
@@ -84,12 +82,6 @@ map <ScrollWheelDown> <C-E>
 set clipboard=unnamed
 
 
-" Shared 'buffer'
-vmap <C-c> :w! ~/.vimbuffer<CR>
-nmap <C-c> :.w! ~/vimbuffer<CR>
-" paste from buffer
-nmap <C-p> :r ~/.vimbuffer<CR>
-
 " Trailing Whitespace
 highlight default link EndOfLineSpace ErrorMsg
 match EndOfLineSpace / \+$/
@@ -103,4 +95,4 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
-autocmd BufRead,BufNewFile *.md setlocal spell
+"autocmd BufRead,BufNewFile *.md setlocal spell
