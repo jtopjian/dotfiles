@@ -1,4 +1,5 @@
-colorscheme gotham256
+let g:mirodark_disable_color_approximation=1
+colorscheme mirodark
 
 " use visual bell instead of beeping
 set vb

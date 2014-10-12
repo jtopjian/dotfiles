@@ -12,6 +12,7 @@ fi
 
 # Aliases
 alias lls="lxc-ls --fancy"
+alias la="lxc-attach -n $1"
 
 # Ignore duplicate history entries
 HISTCONTROL=ignoreboth
