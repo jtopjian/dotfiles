@@ -97,3 +97,6 @@ autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
 "autocmd BufRead,BufNewFile *.md setlocal spell
+
+" Disable puppet validate
+let g:syntastic_puppet_validate_disable = 1
