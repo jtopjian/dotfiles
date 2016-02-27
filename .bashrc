@@ -18,6 +18,6 @@ alias la="lxc-attach -n $1"
 HISTCONTROL=ignoreboth
 
 # golang
-export GOPATH=~/go
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+if [[ -n $(which gimme) ]]; then
+  eval "$(gimme 1.6)"
+fi
