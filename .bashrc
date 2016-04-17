@@ -20,4 +20,5 @@ HISTCONTROL=ignoreboth
 # golang
 if [[ -n $(which gimme) ]]; then
   eval "$(gimme 1.6)"
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
