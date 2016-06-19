@@ -23,7 +23,7 @@ set autoindent|set cindent
 set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 
 " Use hard-tabs for shell
-autocmd FileType sh set noexpandtab
+" autocmd FileType sh set noexpandtab
 
 " show matching brackets
 set showmatch
