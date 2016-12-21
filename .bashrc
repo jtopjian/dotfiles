@@ -10,16 +10,22 @@ else
     PS1="\n\u@\h:\!:\#:\w\n$ "
 fi
 
+# Path
+if [[ ! $PATH =~ "/usr/local/bin" ]]; then
+  export PATH=$PATH:/usr/local/bin
+fi
+
 # Aliases
 alias lls="lxc-ls --fancy"
 alias la="lxc-attach -n $1"
+alias vi="vim"
 
 # Ignore duplicate history entries
 HISTCONTROL=ignoreboth
 
 # golang
 if [[ -n $(which gimme) ]]; then
-  eval "$(gimme 1.7)"
+  eval "$(/usr/local/bin/gimme 1.7)"
   export GOPATH=$HOME/go
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
