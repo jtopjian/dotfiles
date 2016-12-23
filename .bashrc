@@ -23,3 +23,21 @@ if [[ -n $(which gimme) ]]; then
   export GOPATH=$HOME/go
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
+
+install_go() {
+  sudo wget -O /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
+  sudo chmod +x /usr/local/bin/gimme
+  source ~/.bashrc
+}
+
+# Docker
+dock() {
+  eval $(docker-machine env $1)
+}
+
+undock() {
+  unset DOCKER_HOST
+  unset DOCKER_MACHINE_NAME
+  unset DOCKER_TLS_VERIFY
+  unset DOCKER_CERT_PATH
+}
