@@ -25,7 +25,7 @@ HISTCONTROL=ignoreboth
 
 # golang
 if [[ -n $(which gimme) ]]; then
-  eval "$(/usr/local/bin/gimme 1.7)"
+  eval "$(/usr/local/bin/gimme 1.8)"
   export GOPATH=$HOME/go
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
