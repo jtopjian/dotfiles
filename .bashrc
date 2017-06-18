@@ -49,18 +49,18 @@ undock() {
 }
 
 # Testing
-testacc() {
+ttest() {
   if [[ -n $1 ]]; then
-    pushd ~/go/src/github.com/hashicorp/terraform
-    TF_LOG=DEBUG make testacc TEST=./builtin/providers/openstack TESTARGS="-run=$1" 2>&1 | tee ~/openstack.log
+    pushd ~/go/src/github.com/terraform-providers/terraform-provider-openstack
+    TF_LOG=DEBUG make testacc TEST=./openstack TESTARGS="-run=$1" 2>&1 | tee ~/openstack.log
     popd
   fi
 }
 
-testacc2() {
+ttest2() {
   if [[ -n $1 ]]; then
-    pushd ~/go/src/github.com/hashicorp/terraform
-    make testacc TEST=./builtin/providers/openstack TESTARGS="-run=$1" 2>&1 | tee ~/openstack.log
+    pushd ~/go/src/github.com/terraform-providers/terraform-provider-openstack
+    make testacc TEST=./openstack TESTARGS="-run=$1" 2>&1 | tee ~/openstack.log
     popd
   fi
 }
