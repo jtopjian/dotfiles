@@ -80,3 +80,12 @@ gophercloudtest() {
     unset OS_SHARE_NETWORK_ID
   fi
 }
+
+closerc() {
+  for i in $(env | grep OS_); do x=$(echo $i | cut -d= -f1); unset $x; done
+}
+
+oscurl() {
+  token=$(openstack token issue -c id -f value)
+  curl -s -H "X-Auth-Token:$token" $1
+}
