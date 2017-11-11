@@ -11,8 +11,14 @@ else
 fi
 
 # Path
+export PATH=$PATH:~/.dotfiles/bin
+
 if [[ ! $PATH =~ "/usr/local/bin" ]]; then
   export PATH=$PATH:/usr/local/bin
+fi
+
+if [[ -d "/Users/jtopjian/Library/Python/2.7/bin" ]]; then
+  export PATH=~/Library/Python/2.7/bin:$PATH
 fi
 
 # Aliases
