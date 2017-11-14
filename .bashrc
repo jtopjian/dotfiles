@@ -40,6 +40,7 @@ install_go() {
   sudo wget -O /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
   sudo chmod +x /usr/local/bin/gimme
   source ~/.bashrc
+  go get github.com/fatih/hclfmt
 }
 
 # Docker
