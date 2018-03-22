@@ -22,6 +22,9 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = git://github.com/fatih/vim-go.git
-[submodule "vim-hclfmt"]
+[submodule ".vim/bundle/vim-hashicorp-tools"]
+	path = .vim/bundle/vim-hashicorp-tools
+	url = https://github.com/hashivim/vim-hashicorp-tools.git
+[submodule ".vim/bundle/vim-hclfmt"]
 	path = .vim/bundle/vim-hclfmt
 	url = https://github.com/fatih/vim-hclfmt.git

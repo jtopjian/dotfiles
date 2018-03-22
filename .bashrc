@@ -96,3 +96,6 @@ oscurl() {
   token=$(openstack token issue -c id -f value)
   curl -s -H "X-Auth-Token:$token" $1
 }
+
+# added by travis gem
+[ -f /root/.travis/travis.sh ] && source /root/.travis/travis.sh
