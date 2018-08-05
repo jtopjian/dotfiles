@@ -55,7 +55,7 @@ undock() {
 ttest() {
   if [[ -n $1 ]]; then
     pushd ~/go/src/github.com/terraform-providers/terraform-provider-openstack
-    TF_LOG=DEBUG make testacc TEST=./openstack TESTARGS="-run=$1" 2>&1 | tee ~/openstack.log
+    TF_LOG=DEBUG make testacc TEST=./openstack TESTARGS="-run=$1 -count=1" 2>&1 | tee ~/openstack.log
     popd
   fi
 }
