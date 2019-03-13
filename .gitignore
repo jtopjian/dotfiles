@@ -1,2 +1,4 @@
-.vim/spell
+**/*.swp
 .bashrc.local
+.vim/spell
+.vim/.netrwhist
