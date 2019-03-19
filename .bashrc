@@ -55,7 +55,12 @@ undock() {
 # Testing
 ttest() {
   if [[ -n $1 ]]; then
-    pushd ~/go/src/github.com/terraform-providers/terraform-provider-openstack
+    if [[ -d ~/terraform-provider-openstack ]]; then
+      dir="$HOME/terraform-provider-openstack"
+    else
+      dir="$HOME/go/src/github.com/terraform-providers/terraform-provider-openstack"
+    fi
+    pushd $dir
     TF_LOG=DEBUG make testacc TEST=./openstack TESTARGS="-run=$1 -count=1" 2>&1 | tee ~/openstack.log
     popd
   fi
@@ -71,7 +76,12 @@ ttest2() {
 
 gophercloudtest() {
   if [[ -n $1 ]] && [[ -n $2 ]]; then
-    pushd  ~/go/src/github.com/gophercloud/gophercloud
+    if [[ -d ~/gophercloud ]]; then
+      dir="$HOME/gophercloud"
+    else
+      dir="$HOME/go/src/github.com/gophercloud/gophercloud"
+    fi
+    pushd $dir
     go test -v -tags "fixtures acceptance" -run "$1" github.com/gophercloud/gophercloud/acceptance/openstack/$2 | tee ~/gophercloud.log
     popd
   fi
