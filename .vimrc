@@ -103,3 +103,23 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Disable puppet validate
 let g:syntastic_puppet_validate_disable = 1
+
+" Format Terraform files
+function! Tffmt()
+  let l:curw = winsaveview()
+  let l:tmpfile = tempname() . ".tf"
+  call writefile(getline(1, "$"), l:tmpfile)
+  let output = system("terraform fmt -write " . l:tmpfile)
+  if v:shell_error == 0
+    try | silent undojoin | catch | endtry
+    call rename(l:tmpfile, expand("%"))
+    silent edit!
+    let &syntax = &syntax
+  else
+    echo output
+    call delete(l:tmpfile)
+  endif
+  call winrestview(l:curw)
+endfunction
+
+autocmd BufWritePre *.tf call Tffmt()
